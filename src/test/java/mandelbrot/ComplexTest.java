@@ -46,7 +46,7 @@ public class ComplexTest {
     @Test
     void testOne(){
         assertEquals(1, Complex.ONE.getReal());
-        //assertEquals(0, Complex.ONE.getImaginary());
+        assertEquals(0, Complex.ONE.getImaginary());
     }
 
     @Test
