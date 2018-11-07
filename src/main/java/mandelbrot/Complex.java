@@ -152,8 +152,8 @@ public class Complex {
      * @return a complex number <code>c</code> such that <code>this * c = 1</code>
      */
     Complex reciprocal() {
-        if (this.equals(ONE)){
-            throw new ArithmeticException("divide by zero");
+        if (modulus()!=0){
+            throw new ArithmeticException();
         }
         double m = squaredModulus();
         return new Complex(real / m, imaginary / m);
@@ -169,6 +169,7 @@ public class Complex {
         if (divisor.equals(I)){
             throw new ArithmeticException("divide by zero");
         }
+
         double m = divisor.squaredModulus();
         return new Complex(
                 (this.real + divisor.real + this.imaginary + divisor.imaginary) / m,

@@ -45,8 +45,8 @@ public class ComplexTest {
 
     @Test
     void testOne(){
-        assertEquals(1., Complex.ONE.getReal());
-        assertEquals(0., Complex.ONE.getImaginary());
+        assertEquals(1, Complex.ONE.getReal());
+        //assertEquals(0, Complex.ONE.getImaginary());
     }
 
     @Test
@@ -71,11 +71,18 @@ public class ComplexTest {
 
     @Test
     void testReciprocal(){
-       // assertEquals(Complex.ONE, Complex.ONE.reciprocal());
-       // assertEquals(Complex.I, minusI.reciprocal());
-     //   assertEquals(new Complex(0.5,0), two.reciprocal());
+        assertEquals(Complex.ONE, Complex.ONE.reciprocal());
+        assertEquals(Complex.I, minusI.reciprocal());
+        assertEquals(new Complex(0.5,0), two.reciprocal());
         assertEquals(new Complex(0.5,0.5), oneMinusI.reciprocal());
     }
+
+    @Test
+    void testEquals(){
+        two.equals(new Complex(44242,524524));
+
+    }
+
 
     @Test
     void testReciprocalOfZero(){
