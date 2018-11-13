@@ -27,6 +27,13 @@ public class ComplexTest {
     }
 
     @Test
+    void testModulus(){
+        assertEquals(2, Math.sqrt(twoI.real * twoI.real + twoI.imaginary * twoI.imaginary));
+        assertEquals(1, Math.sqrt(minusOne.real * minusOne.real + minusOne.imaginary * minusOne.imaginary));
+        assertEquals(Math.sqrt(2), Math.sqrt(onePlusI.real * onePlusI.real + onePlusI.imaginary * onePlusI.imaginary));
+    }
+
+    @Test
     void testSquaredModulus(){
         assertEquals(4, twoI.real * twoI.real + twoI.imaginary * twoI.imaginary);
         assertEquals(2, onePlusI.real * onePlusI.real + onePlusI.imaginary * onePlusI.imaginary);
