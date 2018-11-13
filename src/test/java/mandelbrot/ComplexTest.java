@@ -16,7 +16,6 @@ public class ComplexTest {
     private final double real = -12;
     private final double imaginary = 10;
 
-
     @Test
     void testConstructor(){
         assertEquals(0., twoI.real, Helpers.EPSILON);
@@ -25,6 +24,13 @@ public class ComplexTest {
         assertEquals(-1., oneMinusI.imaginary, Helpers.EPSILON);
         assertEquals(2., two.real, Helpers.EPSILON);
         assertEquals(0., two.imaginary, Helpers.EPSILON);
+    }
+
+    @Test
+    void testMultiply(){
+        assertEquals(new Complex(1,-1), new Complex(onePlusI.real * minusI.real - onePlusI.imaginary * minusI.imaginary,onePlusI.real * minusI.imaginary - onePlusI.imaginary * minusI.real));
+        assertEquals(new Complex(0,4), new Complex(two.real * twoI.real - two.imaginary * twoI.imaginary,two.real * twoI.imaginary - two.imaginary * twoI.real));
+        assertEquals(new Complex(-2,2), new Complex(onePlusI.real * twoI.real - onePlusI.imaginary * twoI.imaginary,onePlusI.real * twoI.imaginary - onePlusI.imaginary * twoI.real));
     }
 
     @Test
