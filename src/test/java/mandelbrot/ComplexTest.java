@@ -26,6 +26,16 @@ public class ComplexTest {
         assertEquals(0., two.imaginary, Helpers.EPSILON);
     }
 
+    ///////////////////////////////////////////////////
+
+    @Test
+    void testScale(){
+        assertEquals(new Complex(2, -2), oneMinusI.scale(2));
+        assertEquals(new Complex(3, 3), onePlusI.scale(3));
+        assertEquals(new Complex(1, 0), two.scale(0.5));
+        assertEquals(new Complex(0, 10), minusI.scale(-10));
+    }
+
     @Test
     void testModulus(){
         assertEquals(2, Math.sqrt(twoI.real * twoI.real + twoI.imaginary * twoI.imaginary));
